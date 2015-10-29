@@ -36,7 +36,7 @@ module NMatrix::IO::Matlab
     attr_reader :file_header, :first_tag_field, :first_data_field
 
     class Compressed #:nodoc:
-      include Packable
+      # include Packable
 
       attr_reader :byte_order
 
@@ -94,7 +94,7 @@ module NMatrix::IO::Matlab
                                   :imaginary_part, :row_index, :column_index)
 
     class MatrixData < MatrixDataStruct #:nodoc:
-      include Packable
+      # include Packable
 
       def write_packed(packedio, options)
         raise NotImplementedError
@@ -405,7 +405,7 @@ module NMatrix::IO::Matlab
 
     class Header < Struct.new(:desc, :data_offset, :version, :endian) #:nodoc:
 
-      include Packable
+      # include Packable
 
       BYTE_ORDER_LENGTH		= 2
       DESC_LENGTH					= 116
@@ -437,7 +437,7 @@ module NMatrix::IO::Matlab
     end
 
     class Tag < Struct.new(:data_type, :raw_data_type, :bytes, :small) #:nodoc:
-      include Packable
+      # include Packable
 
       DATA_TYPE_OPTS = BYTES_OPTS = {:bytes => 4, :signed => false}
       LENGTH = DATA_TYPE_OPTS[:bytes] + BYTES_OPTS[:bytes]
@@ -497,7 +497,7 @@ module NMatrix::IO::Matlab
 
 
     class Element < Struct.new(:tag, :data) #:nodoc:
-      include Packable
+      # include Packable
 
       def write_packed packedio, options
         packedio << [tag, {}] << [data, {}]

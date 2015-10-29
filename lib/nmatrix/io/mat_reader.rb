@@ -27,7 +27,7 @@
 #
 #++
 
-require 'packable'
+# require 'packable'
 
 module NMatrix::IO::Matlab
 

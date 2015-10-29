@@ -55,7 +55,7 @@ EOF
 
   gem.required_ruby_version = '>= 1.9'
 
-  gem.add_dependency 'packable', '~> 1.3', '>= 1.3.5'
+  # gem.add_dependency 'packable', '~> 1.3', '>= 1.3.5'
   gem.add_development_dependency 'bundler', '~>1.6'
   gem.add_development_dependency 'pry', '~>0.10'
   gem.add_development_dependency 'rake', '~>10.3'
